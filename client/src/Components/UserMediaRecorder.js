@@ -53,8 +53,8 @@ const MediaRecorderComponent = () => {
     }
 
     mediaRecorderRef.current = new MediaRecorder(mediaStream, {
-      audioBitsPerSecond: 128000,
-      videoBitsPerSecond: 250000,
+      audioBitsPerSecond: 2500000,
+      videoBitsPerSecond: 128000,
       mimeType: 'video/webm; codecs=vp9',
     });
 
@@ -64,7 +64,7 @@ const MediaRecorderComponent = () => {
       }
     };
 
-    mediaRecorderRef.current.start(1000); // Start recording with 1000ms (1 second) timeslice
+    mediaRecorderRef.current.start(50); // Start recording with 50ms timeslice
     setIsRecording(true);
   };
 
